@@ -22,7 +22,7 @@ app.get("/", (req, res)=>{
 app.use("/user", userRouter)
 app.use("/blog",authentication, BlogRouter)
 
-let PORT = 3000;
+let PORT = 8500;
 
 app.listen(PORT, async()=>{
 
