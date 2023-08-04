@@ -22,9 +22,12 @@ app.get("/", (req, res)=>{
 app.use("/user", userRouter)
 app.use("/blog",authentication, BlogRouter)
 
-let PORT = 8500;
+ 
 
-app.listen(PORT, async()=>{
+app.use((req,res)=>{
+    res.status(404).send({"message":"Route not found."})
+})
+app.listen(4000, async()=>{
 
     try {
         await connection
@@ -35,5 +38,5 @@ app.listen(PORT, async()=>{
         console.log(error)
         
     }
-    console.log(`Server started on port ${PORT}`);
+    console.log(`Server started on port 4000`);
 })
