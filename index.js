@@ -22,7 +22,7 @@ app.get("/", (req, res)=>{
 app.use("/user", userRouter)
 app.use("/blog",authentication, BlogRouter)
 
- 
+// let PORT = 8500;
 
 app.use((req,res)=>{
     res.status(404).send({"message":"Route not found."})
