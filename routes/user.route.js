@@ -9,6 +9,7 @@ const { UserModel } = require("../models/User.model");
 
 const userRouter = Router();
 
+//signup endpoint
 userRouter.post("/signup", async (req, res) => {
   let { name, age, ph_number, email, password } = req.body;
 
@@ -44,6 +45,8 @@ userRouter.post("/signup", async (req, res) => {
   }
 });
 
+
+//login endpoint
 userRouter.post("/login", async (req, res)=>{
     const {email, password} = req.body;
 
