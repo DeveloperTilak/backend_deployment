@@ -24,6 +24,9 @@ app.use("/blog",authentication, BlogRouter)
 
 let PORT = 8500;
 
+app.use((req,res)=>{
+    res.status(404).send({"message":"Route not found."})
+})
 app.listen(PORT, async()=>{
 
     try {
